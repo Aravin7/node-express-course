@@ -1,8 +1,9 @@
 const express = require("express");
 const app = express();
 
-const bodyParser = require("body-parser");
-app.use(bodyParser.json());
+//const bodyParser = require("body-parser");
+
+app.use(express.json());
 
 const mockUserData = [{ name: "Mark" }, { name: "Jill" }];
 app.get("/users", function (req, res) {
@@ -26,8 +27,11 @@ app.post("/login", function (req, res) {
   const username = req.body.username;
   const password = req.body.password;
 
-  const mockUsername = "billyTheKid";
-  const mockPassword = "superSecret";
+  console.log(username);
+  console.log(password);
+
+  const mockUsername = "ara";
+  const mockPassword = "123";
 
   if (username === mockUsername && password === mockPassword) {
     res.json({
